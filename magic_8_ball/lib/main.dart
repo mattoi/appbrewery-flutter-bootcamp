@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-void main() => runApp(
-      MaterialApp(
-        home: BallPage(),
-      ),
-    );
+void main() => runApp(MaterialApp(home: BallPage()));
 
 class BallPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Ball();
-  }
+  Widget build(BuildContext context) => Ball();
 }
 
 class Ball extends StatefulWidget {
@@ -21,13 +15,13 @@ class Ball extends StatefulWidget {
 
 class _BallState extends State<Ball> {
   int ballNumber = Random().nextInt(5) + 1;
-  static const String TEXTO_TITULO = 'Week 2 Eden clear?';
+  static const String kTitleText = 'Week 2 Eden clear?';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: Text(TEXTO_TITULO),
+        title: Text(kTitleText),
       ),
       backgroundColor: Colors.deepPurpleAccent,
       body: Container(
@@ -35,10 +29,7 @@ class _BallState extends State<Ball> {
           child: FlatButton(
             child: Image.asset('images/ball$ballNumber.png'),
             onPressed: () {
-              setState(() {
-                ballNumber = diffRandomNumber(ballNumber, 5) + 1;
-                print('I got clicked! $ballNumber');
-              });
+              setState(() => ballNumber = diffRandomNumber(ballNumber, 5) + 1);
             },
           ),
         ),
@@ -48,9 +39,8 @@ class _BallState extends State<Ball> {
 }
 
 int diffRandomNumber(int previous, int max) {
+  // getting the same result twice would be underwhelming, but in real life it could happen
   int next = previous;
-  while (next == previous) {
-    next = Random().nextInt(max);
-  }
+  while (next == previous) next = Random().nextInt(max);
   return next;
 }
