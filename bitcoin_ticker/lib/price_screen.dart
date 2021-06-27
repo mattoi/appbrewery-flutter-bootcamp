@@ -49,9 +49,12 @@ class _PriceScreenState extends State<PriceScreen> {
 
   void getValues() async {
     try {
-      String btc = await CoinData().getCoinData('BTC', selectedCurrency);
-      String eth = await CoinData().getCoinData('ETH', selectedCurrency);
-      String ltc = await CoinData().getCoinData('LTC', selectedCurrency);
+      String btc =
+          await CoinData().getCoinData('BTC', selectedCurrency).toString();
+      String eth =
+          await CoinData().getCoinData('ETH', selectedCurrency).toString();
+      String ltc =
+          await CoinData().getCoinData('LTC', selectedCurrency).toString();
       setState(() {
         btcvalue = btc;
         ethvalue = eth;

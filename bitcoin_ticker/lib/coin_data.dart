@@ -40,7 +40,7 @@ class CoinData {
         'https://rest.coinapi.io/v1/exchangerate/$cryptoCurrency/$selectedCurrency?apikey=$apikey';
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
-      return jsonDecode(response.body)['rate'];
+      return jsonDecode(response.body)['rate'].toString();
     } else {
       print(response.statusCode);
       return '?';
