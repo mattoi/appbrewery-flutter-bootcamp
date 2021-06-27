@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-void main() {
-  return runApp(
-    MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text('Dicee'),
+void main() => runApp(
+      MaterialApp(
+        home: Scaffold(
           backgroundColor: Colors.red,
+          appBar: AppBar(
+            title: Text('Dicee'),
+            backgroundColor: Colors.red,
+          ),
+          body: DicePage(),
         ),
-        body: DicePage(),
       ),
-    ),
-  );
-}
+    );
 
 class DicePage extends StatefulWidget {
   @override
@@ -27,24 +25,22 @@ class DicePageState extends State<DicePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(children: <Widget>[
-        Expanded(
-          child: FlatButton(
-            child: Image.asset('images/dice$leftDiceNumber.png'),
-            onPressed: () {
-              setState(rollBoth);
-            },
+      child: Row(
+        children: [
+          Expanded(
+            child: FlatButton(
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+              onPressed: () => setState(rollBoth),
+            ),
           ),
-        ),
-        Expanded(
-          child: FlatButton(
-            child: Image.asset('images/dice$rightDiceNumber.png'),
-            onPressed: () {
-              setState(rollBoth);
-            },
+          Expanded(
+            child: FlatButton(
+              child: Image.asset('images/dice$rightDiceNumber.png'),
+              onPressed: () => setState(rollBoth),
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 
