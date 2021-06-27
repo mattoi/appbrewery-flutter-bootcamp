@@ -3,6 +3,8 @@ import 'package:bitcoin_ticker/coin_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
 
+//TODO fix this whole thing. the app is not showing the values.
+
 class PriceScreen extends StatefulWidget {
   @override
   _PriceScreenState createState() => _PriceScreenState();
@@ -49,12 +51,9 @@ class _PriceScreenState extends State<PriceScreen> {
 
   void getValues() async {
     try {
-      String btc =
-          await CoinData().getCoinData('BTC', selectedCurrency).toString();
-      String eth =
-          await CoinData().getCoinData('ETH', selectedCurrency).toString();
-      String ltc =
-          await CoinData().getCoinData('LTC', selectedCurrency).toString();
+      String btc = await CoinData().getCoinData('BTC', selectedCurrency);
+      String eth = await CoinData().getCoinData('ETH', selectedCurrency);
+      String ltc = await CoinData().getCoinData('LTC', selectedCurrency);
       setState(() {
         btcvalue = btc;
         ethvalue = eth;
@@ -155,6 +154,17 @@ class _PriceScreenState extends State<PriceScreen> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class CryptoCard extends  StatelessWidget {
+  const CryptoCard({ Key key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
