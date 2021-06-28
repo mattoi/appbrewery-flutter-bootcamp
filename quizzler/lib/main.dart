@@ -100,6 +100,7 @@ class _QuizPageState extends State<QuizPage> {
       context: context,
       title: 'Finished!',
       desc: 'You\'ve got $numCorrect out of $numQuestions correct answers.',
+      closeFunction: () {},
       buttons: [
         DialogButton(
           child: Text(

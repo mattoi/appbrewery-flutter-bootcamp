@@ -64,11 +64,9 @@ class QuizBrain {
     if (_questionsList?.isNotEmpty ?? false) {
       final isCorrect =
           _questionsList[_currentQuestionNum]?.correctAnswer == answerGiven;
-      print(
-          "Is the answer for question $_currentQuestionNum correct? $isCorrect");
+
       return isCorrect;
     } else {
-      print('The questions list is empty.');
       return false;
     }
   }
@@ -76,19 +74,16 @@ class QuizBrain {
   bool get isFinished {
     // isso pode ser um getter? tava usando como isFinished() normal antes
     final isFinished = (_currentQuestionNum == numQuestions - 1);
-    if (isFinished) print('Reached the end of the quiz.');
     return isFinished;
   }
 
   void nextQuestion() {
     if (!isFinished) {
       _currentQuestionNum++;
-      print('Next question: $_currentQuestionNum');
     }
   }
 
   void reset() {
     _currentQuestionNum = 0;
-    print('Question number reset.');
   }
 }
