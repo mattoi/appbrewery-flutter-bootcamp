@@ -1,7 +1,7 @@
 class Story {
-  final title; //text
-  final choice1; // text
-  final choice2; // text
+  final String title;
+  final String choice1;
+  final String choice2;
 
   Story({this.title, this.choice1, this.choice2});
 }

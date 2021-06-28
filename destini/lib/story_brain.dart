@@ -41,7 +41,6 @@ class StoryBrain {
 
   void nextStory(int choiceNumber) {
     if (choiceNumber == 1) {
-      print('User picked choice 1');
       switch (_storyNumber) {
         case 0:
           _storyNumber = 2;
@@ -56,7 +55,6 @@ class StoryBrain {
           restart();
       }
     } else if (choiceNumber == 2) {
-      print('User picked choice 2');
       switch (_storyNumber) {
         case 0:
           _storyNumber = 1;
@@ -71,7 +69,6 @@ class StoryBrain {
           restart();
       }
     }
-    print('Current story: $_storyNumber');
   }
 
   bool get reachedAnEnding => (_storyNumber > 2);
