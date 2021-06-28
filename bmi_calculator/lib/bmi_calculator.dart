@@ -8,11 +8,9 @@ class BMIRange {
 }
 
 Map<String, BMIRange> bmiRanges = {
-  // help: is this the best way to store this data?
-  // answer: usually no but you dont have to worry about this right now
   'UNDERWEIGHT': BMIRange('UNDERWEIGHT',
       'You have a lower than normal body weight. You can eat a bit more.'),
-  'OK': BMIRange('OK', 'You have a normal body weight. Nice!'),
+  'HEALTHY': BMIRange('HEALTHY', 'You have a normal body weight. Nice!'),
   'OVERWEIGHT': BMIRange('OVERWEIGHT',
       'You have a higher than normal body weight. Try to exercise more.'),
 };

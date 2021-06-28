@@ -13,7 +13,7 @@ class BottomButton extends StatelessWidget {
       width: double.infinity,
       height: 75,
       child: RaisedButton(
-        color: UIColors.BOTTOM_CONTAINER,
+        color: UIColors.bottomContainer,
         child: Center(
           child: Text(
             label,

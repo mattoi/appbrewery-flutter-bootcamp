@@ -7,17 +7,13 @@ import 'package:bmi_calculator/components/reusable_card.dart';
 class ResultsPage extends StatelessWidget {
   final double bmi;
   final BMIRange resultRange;
-
-  const ResultsPage({Key key, this.bmi, this.resultRange}) : super(key: key);
+  const ResultsPage({this.bmi, this.resultRange});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('BMI CALCULATOR'),
-        ),
-        //body: Center(child: endPicture), // Gostosa.
+        appBar: AppBar(title: Text('BMI CALCULATOR')),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -29,7 +25,8 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
             ReusableCard(
-              color: UIColors.ACTIVE,
+              padding: EdgeInsets.all(16),
+              color: UIColors.active,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -51,11 +48,7 @@ class ResultsPage extends StatelessWidget {
             ),
             BottomButton(
               label: 'RECALCULATE',
-              onPressed: () {
-                Navigator.pop(
-                  context,
-                );
-              },
+              onPressed: () => Navigator.pop(context),
             ),
           ],
         ),

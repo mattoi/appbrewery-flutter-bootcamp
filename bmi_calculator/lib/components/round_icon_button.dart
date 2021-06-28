@@ -12,7 +12,7 @@ class RoundIconButton extends StatelessWidget {
     this.color = defaultColor,
     @required this.icon,
     @required this.onPressed,
-  }) : assert(icon != null);
+  });
 
   @override
   Widget build(BuildContext context) {

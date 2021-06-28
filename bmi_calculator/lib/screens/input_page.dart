@@ -23,16 +23,14 @@ class _InputPageState extends State<InputPage> {
 
   Color setGenderCardColor(Gender selectedGender, Gender previousGender) {
     return (selectedGender == previousGender)
-        ? UIColors.ACTIVE
-        : UIColors.INACTIVE;
+        ? UIColors.active
+        : UIColors.inactive;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
-      ),
+      appBar: AppBar(title: Text('BMI CALCULATOR')),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -40,10 +38,7 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 ReusableCard(
-                  // Male card
-                  onTap: () {
-                    setState(() => userGender = Gender.male);
-                  },
+                  onTap: () => setState(() => userGender = Gender.male),
                   color: setGenderCardColor(Gender.male, userGender),
                   child: IconContent(
                     label: 'MALE',
@@ -51,10 +46,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 ReusableCard(
-                  // Female card
-                  onTap: () {
-                    setState(() => userGender = Gender.female);
-                  },
+                  onTap: () => setState(() => userGender = Gender.female),
                   color: setGenderCardColor(Gender.female, userGender),
                   child: IconContent(
                     label: 'FEMALE',
@@ -65,7 +57,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           ReusableCard(
-            color: UIColors.ACTIVE,
+            color: UIColors.active,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -91,15 +83,13 @@ class _InputPageState extends State<InputPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
                   children: [
                     Text(
                       userHeight.toInt().toString(),
                       style: numberTextStyle,
                     ),
-                    Text(
-                      ' cm',
-                      style: labelTextStyle,
-                    )
+                    Text(' cm', style: labelTextStyle)
                   ],
                 ),
               ],
@@ -109,14 +99,11 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 ReusableCard(
-                  color: UIColors.ACTIVE,
+                  color: UIColors.active,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'WEIGHT',
-                        style: labelTextStyle,
-                      ),
+                      Text('WEIGHT', style: labelTextStyle),
                       Text(
                         userWeight.toString(),
                         style: numberTextStyle,
@@ -142,18 +129,12 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 ReusableCard(
-                  color: UIColors.ACTIVE,
+                  color: UIColors.active,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'AGE',
-                        style: labelTextStyle,
-                      ),
-                      Text(
-                        userAge.toString(),
-                        style: numberTextStyle,
-                      ),
+                      Text('AGE', style: labelTextStyle),
+                      Text(userAge.toString(), style: numberTextStyle),
                       SizedBox(height: 2),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

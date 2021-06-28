@@ -4,8 +4,7 @@ import 'package:bmi_calculator/constants.dart';
 class IconContent extends StatelessWidget {
   final Icon icon;
   final String label;
-
-  const IconContent({this.icon, this.label}) : assert(icon != null);
+  const IconContent({@required this.icon, this.label});
 
   @override
   Widget build(BuildContext context) {
