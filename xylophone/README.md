@@ -1,7 +1,7 @@
 
 # Xylophone
 
-This is a simple music app that plays sounds when you touch a color. The objective is to use third party libraries and different types of resources.
+This is a simple music app that plays a sound when you touch a color. The objective is to use third party libraries and different types of resources.
 
 ![Xylophone Screenshot](/resources/xylophone.png)
 
