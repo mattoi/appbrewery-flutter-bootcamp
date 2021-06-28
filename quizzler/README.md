@@ -1,7 +1,5 @@
 # Quizzler
 
-## Our Goal
-
 A quiz app. Counts each correct answer and shows the result to the user via an alert at the end.
 
 ![Quizzler Screenshot 1](/resources/quizzler_1.png) 
