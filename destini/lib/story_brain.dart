@@ -35,9 +35,7 @@ class StoryBrain {
   int _storyNumber = 0;
   Story get currentStory => _storyData[_storyNumber];
 
-  void restart() {
-    _storyNumber = 0;
-  }
+  void restart() => _storyNumber = 0;
 
   void nextStory(int choiceNumber) {
     if (choiceNumber == 1) {

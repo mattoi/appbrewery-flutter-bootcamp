@@ -35,33 +35,24 @@ class _StoryPageState extends State<StoryPage> {
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            children: [
               Expanded(
                 flex: 12,
                 child: Center(
                   child: Text(
                     storyBrain.currentStory.title,
-                    style: TextStyle(
-                      fontSize: 25.0,
-                    ),
+                    style: TextStyle(fontSize: 25.0),
                   ),
                 ),
               ),
               Expanded(
                 flex: 2,
                 child: FlatButton(
-                  onPressed: () {
-                    //Choice 1 made by user.
-                    setState(() {
-                      storyBrain.nextStory(1);
-                    });
-                  },
+                  onPressed: () => setState(() => storyBrain.nextStory(1)),
                   color: Colors.red,
                   child: Text(
                     storyBrain.currentStory.choice1,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
+                    style: TextStyle(fontSize: 20.0),
                   ),
                 ),
               ),
@@ -72,18 +63,11 @@ class _StoryPageState extends State<StoryPage> {
                 Expanded(
                   flex: 2,
                   child: FlatButton(
-                    onPressed: () {
-                      //Choice 2 made by user.
-                      setState(() {
-                        storyBrain.nextStory(2);
-                      });
-                    },
+                    onPressed: () => setState(() => storyBrain.nextStory(2)),
                     color: Colors.blue,
                     child: Text(
                       storyBrain.currentStory.choice2,
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
+                      style: TextStyle(fontSize: 20.0),
                     ),
                   ),
                 ),
