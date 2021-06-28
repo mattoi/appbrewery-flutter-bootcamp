@@ -2,7 +2,7 @@
 
 This is a dice app. Touch either dice to reroll both. The objective is to get used to stateless vs stateful widgets, and learning to use setState.
 
-![Dicee Screenshot 1](/resources/dicee_1.png)
+![Dicee Screenshot](/resources/dicee.png)
 
 ## Goals
 

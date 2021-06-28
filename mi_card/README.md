@@ -3,7 +3,7 @@
 
 This is a business card in form of an app. The objective is to learn how to do a simple user interface using widgets, as well as formatting text and using custom fonts. 
 
-![Mi Card Screenshot 1](/resources/micard_1.png)
+![Mi Card Screenshot](/resources/micard.png)
 
 ## Goals
 
