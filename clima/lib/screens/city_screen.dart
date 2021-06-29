@@ -21,13 +21,11 @@ class _CityScreenState extends State<CityScreen> {
         constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
-            children: <Widget>[
+            children: [
               Align(
                 alignment: Alignment.topLeft,
                 child: FlatButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: () => Navigator.pop(context),
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 50.0,
@@ -39,15 +37,11 @@ class _CityScreenState extends State<CityScreen> {
                 child: TextField(
                   style: TextStyle(color: Colors.black),
                   decoration: kTextFieldInputDecoration,
-                  onChanged: (value) {
-                    cityName = value;
-                  },
+                  onChanged: (value) => cityName = value,
                 ),
               ),
               FlatButton(
-                onPressed: () {
-                  Navigator.pop(context, cityName);
-                },
+                onPressed: () => Navigator.pop(context, cityName),
                 child: Text(
                   'Get Weather',
                   style: kButtonTextStyle,

@@ -58,19 +58,16 @@ class _LocationScreenState extends State<LocationScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+                children: [
                   FlatButton(
                     onPressed: () async {
                       var newData = await weather.getLocalWeather();
                       updateUI(newData);
                     },
-                    child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
-                    ),
+                    child: Icon(Icons.near_me, size: 50.0),
                   ),
                   FlatButton(
                     onPressed: () async {
@@ -84,17 +81,14 @@ class _LocationScreenState extends State<LocationScreen> {
                         updateUI(await weather.getCityWeather(typedName));
                       }
                     },
-                    child: Icon(
-                      Icons.location_city,
-                      size: 50.0,
-                    ),
+                    child: Icon(Icons.location_city, size: 50.0),
                   ),
                 ],
               ),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
                 child: Row(
-                  children: <Widget>[
+                  children: [
                     Text(
                       '$temperature°',
                       style: kTempTextStyle,
