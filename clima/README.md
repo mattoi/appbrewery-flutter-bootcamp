@@ -1,6 +1,6 @@
 # Clima
 
-This in a simple weather app. It tries to get the user's geolocation to determine the local weather (based off the API on [OpenWeather](https://openweathermap.org/api)), and also allows the user to search for any city by name and find out the weather as well. The lesson teaches the player on how to use APIs to gather data, as well as implement asynchronous functions, both for geolocation and for the API. Also features simple exception handling. 
+This in a simple weather app. It tries to get the user's geolocation to determine the local weather (based off the API on [OpenWeather](https://openweathermap.org/api)), and also allows the user to search for any city by name and find out the weather as well. The lesson goes on about how to use APIs to gather data, as well as implement asynchronous functions, both for geolocation and for the API. Also features simple exception handling. 
 
 ![Clima Screenshot 1](/resources/clima_1.png)
 
