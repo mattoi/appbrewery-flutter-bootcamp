@@ -6,7 +6,5 @@ class Task {
   bool get isDone => _isDone;
   Task({@required this.description});
 
-  void toggleDone() {
-    _isDone = !_isDone;
-  }
+  void toggleDone() => _isDone = !_isDone;
 }

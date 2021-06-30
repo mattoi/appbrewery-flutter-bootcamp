@@ -3,9 +3,7 @@ import 'package:provider/provider.dart';
 import 'screens/tasks_screen.dart';
 import 'models/task_data.dart';
 
-void main() {
-  runApp(TodoeyApp());
-}
+void main() => runApp(TodoeyApp());
 
 class TodoeyApp extends StatelessWidget {
   @override

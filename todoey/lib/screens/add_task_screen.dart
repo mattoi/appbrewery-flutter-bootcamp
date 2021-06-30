@@ -32,7 +32,6 @@ class AddTaskScreen extends StatelessWidget {
                 onChanged: (value) => newTaskTitle = value,
               ),
               SizedBox(height: 20),
-              // ignore: deprecated_member_use
               FlatButton(
                 color: kBackgroundColor,
                 onPressed: () {
