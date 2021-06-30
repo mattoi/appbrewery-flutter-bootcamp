@@ -1,6 +1,6 @@
 # AppBrewery Flutter Developer Bootcamp With Dart
 
-This is a repository containing all the projects from [The Complete 2021 Flutter Development Bootcamp with Dart](https://www.udemy.com/course/flutter-bootcamp-with-dart/), made in collaboration with the Google Flutter team.
+This is a repository containing all the significant projects from [The Complete 2021 Flutter Development Bootcamp with Dart](https://www.udemy.com/course/flutter-bootcamp-with-dart/), made in collaboration with the Google Flutter team. The extremely simple apps (Hello Rectangle, I'm Rich etc) were not included.
 Each project page has details on the objectives for each module, ranging from basic design with Flutter Widgets and using external libraries, to implementing APIs and asynchronous methods.
 
 Here's a list of the projects in the course order:
