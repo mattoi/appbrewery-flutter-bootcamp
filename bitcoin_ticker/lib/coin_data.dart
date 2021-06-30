@@ -27,11 +27,7 @@ const List<String> currenciesList = [
   'ZAR'
 ];
 
-const List<String> cryptoList = [
-  'BTC',
-  'ETH',
-  'LTC',
-];
+const List<String> cryptoList = ['BTC', 'ETH', 'LTC'];
 
 class CoinData {
   CoinData();
@@ -40,7 +36,7 @@ class CoinData {
         'https://rest.coinapi.io/v1/exchangerate/$cryptoCurrency/$selectedCurrency?apikey=$apikey';
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
-      return jsonDecode(response.body)['rate'].toString();
+      return jsonDecode(response.body)['rate'].toStringAsFixed(2);
     } else {
       print(response.statusCode);
       return '?';

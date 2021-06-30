@@ -1,20 +1,8 @@
-![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
+# Bitcoin Ticker
 
+This is a cryptocurrency checking app using the API from [CoinAPI.io](https://www.coinapi.io/). The objective is to use Material Design or Cupertino, depending on the device used. The API is very limited, and only allows 100 accesses per day.
 
-# Bitcoin Ticker 🤑
-
-## Our Goal
-
-The objective of this tutorial is to learn about using Cupertino and Material Widgets in parallel and providing a different user interface depending on the platform.
-
-
-## What you will create
-
-We’re going to make a crypto currency price checking app. By the end of the module, you'll be able to monitor your bitcoin investents on the move!
-
-![Finished App](https://github.com/londonappbrewery/Images/blob/master/bitcoin-flutter-demo.gif)
-
-## What you will learn
+## Goals
 
 - How to use the DropdownButton Widget from Material design.
 - How to loop through code using Dart for and for-in loops.
@@ -22,7 +10,4 @@ We’re going to make a crypto currency price checking app. By the end of the mo
 - How to check the platform your app is being run on to customise the UI for that platform.
 - Revise previous concepts by completing the challenges.
 
-
->This is a companion project to The App Brewery's Complete Flutter Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
+<img src="/resources/bitcointicker_1.png" alt="Bitcoin Ticker Screenshot 1" width="300"/> <img src="/resources/bitcointicker_2.png" alt="Bitcoin Ticker Screenshot 2" width="300" />
