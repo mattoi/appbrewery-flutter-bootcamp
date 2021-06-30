@@ -3,8 +3,6 @@
 
 This is a business card in form of an app. The objective is to learn how to do a simple user interface using widgets, as well as formatting text and using custom fonts. 
 
-![Mi Card Screenshot](/resources/micard.png)
-
 ## Goals
 
 * How to create Stateless Widgets
@@ -15,3 +13,5 @@ This is a business card in form of an app. The objective is to learn how to do a
 * How to add Material icons
 * How to style Text widgets
 * How to read and use Flutter Documentation
+
+<img src="/resources/micard.png" alt="Mi Card Screenshot" width="300"/>
