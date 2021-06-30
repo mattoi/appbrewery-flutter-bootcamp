@@ -2,11 +2,11 @@
 
 This is an instant messaging app. It actually only has one database for all messages, even if there are more than 2 users, so it can be more like a group chat app.
 
-![Flash Chat Screenshot 1](/resources/flashchat_1.png)
+<img src="/resources/flashchat_1.png" alt="Flash Chat Screenshot 1" width="300"/>
 
 This app incorporates the Firebase framework to create authentication and store messages. It also uses a stream listener to update messages in real time, without having to reload the app.
 
-![Flash Chat Screenshot 2](/resources/flashchat_2.png)
+<img src="/resources/flashchat_2.png" alt="Flash Chat Screenshot 2" width="300"/>
 
 ## Goals
 
@@ -19,4 +19,4 @@ This app incorporates the Firebase framework to create authentication and store 
 - Learn to use ListViews to build scrolling views.
 - How to use Firebase Cloud Firestore to store and retrieve data on the fly.
 
-![Flash Chat Screenshot 3](/resources/flashchat_3.png)
+<img src="/resources/flashchat_3.png" alt="Flash Chat Screenshot 3" width="300"/>
