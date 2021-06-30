@@ -2,8 +2,6 @@
 
 This is an Body Mass Index calculator, featuring two screens. This app's objectives are to customize the standard Flutter widgets to achieve unique designs, and implement multiple screens that communicate with each other, while keeping an organized code structure.
 
-![BMI Screenshot 1](/resources/bmi_1.png)
-
 ## Goals
 
 - How to use Flutter themes to create coherent branding. 
@@ -17,4 +15,4 @@ This is an Body Mass Index calculator, featuring two screens. This app's objecti
 - Learn about composition vs. inheritance and the Flutter way of creating custom UI.
 - Understand the difference between const and final in Dart and when to use each.
 
-![BMI Screenshot 2](/resources/bmi_2.png)
+<img src="/resources/bmi_1.png" alt="BMI Screenshot 1" width="300"/> <img src="/resources/bmi_2.png" alt="BMI Screenshot 2" width="300" />
