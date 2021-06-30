@@ -20,7 +20,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     super.initState();
     animController =
         AnimationController(duration: Duration(seconds: 1), vsync: this);
-
     animController.forward();
     animController.addListener(() => setState(() {}));
   }
@@ -34,18 +33,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('images/logo.png'), //TODO WhatsApp 2
+                    child: Image.asset('images/logo.png'),
                     height: 60.0,
                   ),
                 ),
                 TypewriterAnimatedTextKit(
-                  text: ['WhatsApp 2'],
+                  text: ['Flash Chat'],
                   textStyle: TextStyle(
                     fontSize: 40.0, //45.0,
                     fontWeight: FontWeight.w900,

@@ -28,7 +28,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            children: [
               Flexible(
                 child: Hero(
                   tag: 'logo',
@@ -45,9 +45,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 // email field
                 textAlign: TextAlign.center,
                 keyboardType: TextInputType.emailAddress,
-                onChanged: (value) {
-                  email = value;
-                },
+                onChanged: (value) => email = value,
                 decoration:
                     kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
               ),
@@ -58,9 +56,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 // password field
                 textAlign: TextAlign.center,
                 obscureText: true,
-                onChanged: (value) {
-                  password = value;
-                },
+                onChanged: (value) => password = value,
                 decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Enter your password'),
               ),
@@ -71,20 +67,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 text: 'Register',
                 color: Colors.blueAccent,
                 onPressed: () async {
-                  setState(() {
-                    showSpinner = true;
-                  });
+                  setState(() => showSpinner = true);
                   try {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
                     if (newUser != null) {
                       Navigator.pushNamed(context, ChatScreen.id);
                     }
-                    setState(() {
-                      showSpinner = false;
-                    });
                   } catch (e) {
                     print(e);
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content:
+                            Text('Invalid credentials, please try again')));
+                  } finally {
+                    setState(() => showSpinner = false);
                   }
                 },
               ),

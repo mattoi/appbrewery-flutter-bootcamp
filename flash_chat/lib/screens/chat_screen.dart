@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 final _firestore = FirebaseFirestore.instance;
 User loggedInUser;
@@ -32,7 +33,6 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     getCurrentUser();
-    print(loggedInUser.email);
   }
 
   @override
@@ -40,13 +40,13 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: null,
-        actions: <Widget>[
+        actions: [
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
                 _auth.signOut();
                 Navigator.pop(context);
-                messagesStream();
+                MessagesStream();
               }),
         ],
         title: Text('⚡️Chat'),
@@ -56,25 +56,24 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             MessagesStream(),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
+                children: [
                   Expanded(
                     child: TextField(
                       controller: messageTextController,
-                      onChanged: (value) {
-                        messageText = value;
-                      },
+                      onChanged: (value) => messageText = value,
                       decoration: kMessageTextFieldDecoration,
                     ),
                   ),
                   FlatButton(
                     onPressed: () {
                       _firestore.collection('messages').add({
+                        'timestamp': Timestamp.now(),
                         'sender': loggedInUser.email,
                         'text': messageText,
                       });
@@ -99,7 +98,10 @@ class MessagesStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: _firestore.collection('messages').snapshots(),
+      stream: _firestore
+          .collection('messages')
+          .orderBy('timestamp', descending: false)
+          .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return Center(
@@ -110,12 +112,18 @@ class MessagesStream extends StatelessWidget {
         final messages = snapshot.data.docs.reversed;
         List<MessageBubble> messageBubbles = [];
         for (var message in messages) {
-          final messageText = message.data()['text'];
-          final messageSender = message.data()['sender'];
-          messageBubbles.add(MessageBubble(
+          final String messageText = message.data()['text'];
+          final String messageSender = message.data()['sender'];
+          final timestamp = message.data()['timestamp'].toDate().toString();
+          messageBubbles.add(
+            MessageBubble(
               sender: messageSender,
               text: messageText,
-              isMe: (messageSender == loggedInUser.email)));
+              isMe: (messageSender == loggedInUser.email),
+              timestamp:
+                  DateFormat.yMMMd().add_jm().format(DateTime.parse(timestamp)),
+            ),
+          );
         }
         return Expanded(
           child: ListView(
@@ -130,10 +138,15 @@ class MessagesStream extends StatelessWidget {
 }
 
 class MessageBubble extends StatelessWidget {
-  const MessageBubble({@required this.sender, @required this.text, this.isMe});
+  const MessageBubble(
+      {@required this.sender,
+      @required this.timestamp,
+      @required this.text,
+      this.isMe});
   final String sender;
   final String text;
   final bool isMe;
+  final timestamp;
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +157,7 @@ class MessageBubble extends StatelessWidget {
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
           Text(
-            '$sender',
+            '$sender, $timestamp',
             style: TextStyle(color: Colors.black54, fontSize: 12.0),
           ),
           Material(
@@ -166,7 +179,6 @@ class MessageBubble extends StatelessWidget {
               ),
             ),
           ),
-          //TODO timestamp
         ],
       ),
     );

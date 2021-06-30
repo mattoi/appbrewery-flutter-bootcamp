@@ -6,8 +6,7 @@ class RoundedButton extends StatelessWidget {
   final Function onPressed;
 
   const RoundedButton(
-      {@required this.text, @required this.color, @required this.onPressed})
-      : super();
+      {@required this.text, @required this.color, @required this.onPressed});
   //final string destinationID;
 
   @override
